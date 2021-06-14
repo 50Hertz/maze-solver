@@ -32,7 +32,7 @@ The advantage of DFS is that it's fast and the memory access patterns involved i
 
 
 ## Contact
-Seyi S. Adedara - adedaraseyi@outlook.com
+Seyi S. Adedara - adedaraseyi@gmail.com
 
 ## References
 <a id="1">[1]</a> 
