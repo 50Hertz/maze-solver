@@ -46,7 +46,7 @@ In this implementation, we brute force the solution of the maze by backtracking 
 This algorithm can be outlined as:
 * If we're at the wall or an already visited node, return failure.
 * Else if we're the exit node, then return success.
-* Else, add the node in path list and recursively travel in all four directions. If failure is returned, remove the node from the path and return failure. Path list will contain a unique path when exit is found.
+* Else, add the node in path list and recursively travel in all four directions. If failure is returned, remove the node from the path and return failure. Path list will contain a unique path when exit is found [[1]](#1).
 
 I defined 2D Array called DIRECTIONS containing a list of nodes, which when added to any _Coordinate_ object would return a neighbouring _Coordinate_ object.
 
