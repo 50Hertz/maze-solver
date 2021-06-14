@@ -16,7 +16,7 @@
 
 * Run .jar in JARs folder or generated .jar file as Java application:
   ```cmd
-  java -jar maze-traversal-api-0.0.1-SNAPSHOT
+  java -jar maze-traversal-api-0.0.1-SNAPSHOT.jar
   ```
 
 ## Solution
@@ -28,8 +28,17 @@ It is so called because it starts from the root node and follows each path to it
 The advantage of DFS is that it's fast and the memory access patterns involved in running DFS (maintaining the top of a stack and probing places near the most-recently-visited spot) plays well with caches. DFS has an advantage over A*, in the sense that it doesn't have to deal with the associated overhead of maintaining distances in A*. For BFS, probabilistically, start nodes of a maze tend to be at be at the edge of the maze, BFS tends to search outwards from the starting location by exploring paths of progressively longer and longer lengths so a ot of time is spent exploring unnecessary paths.
 
 ## Implementation
+### Maze
+The maze was represented as graph using a two-dimensional (2D) integer array.
 
+_Legend:_
+* 0 - Road
+* 1 - Wall
+* 2 - Entry
+* 3 - Exit
+* 4 - Cell part of the path. i.e. solution path.
 
+This 2D array is passed to the solve() method which returns a list of _Coordinate_ objects. Each _Coordinate_ object represents a node in the graph.
 
 ## Contact
 Seyi S. Adedara - adedaraseyi@gmail.com
