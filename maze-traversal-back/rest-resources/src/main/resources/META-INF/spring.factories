@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  edu.nileuniversity.grad.library.controller.advice.ApiAdvice

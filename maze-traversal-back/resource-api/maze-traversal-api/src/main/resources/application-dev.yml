@@ -1,0 +1,29 @@
+spring:
+  jackson:
+    time-zone: 'GMT+1'
+    serialization:
+      fail-on-empty-beans: false
+
+server:
+  port: 8700
+  servlet:
+    context-path: /api/nile
+    session:
+      cookie:
+        name: MAZERESOURCESESSION
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health,info"
+  endpoint:
+    health:
+      show-details: always
+  server:
+    servlet:
+      context-path: ${server.servlet.context-path}/actuator
+
+logging:
+  level:
+    root: info
