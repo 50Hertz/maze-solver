@@ -25,18 +25,43 @@
 <body>
 
   <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
-  <form>
-    Input Maze (n x n):
+  <h3>Nile University of Nigeria</h3>
+  <h2>Maze Solver</h2>
+
+  <div>
+    <form>
+      <span class="header_text">Input (n x n) Maze: </span>
+      <br>
+      <!-- Check for delimiter-->
+      <textarea rows = "5" cols = "60" id = "inputMaze" placeholder="Enter Maze here..."></textarea>
+      <br>
+    </form>
     <br>
-    <!-- Check for delimiter-->
-    <textarea rows = "5" cols = "60" name = "description" id = "inputMaze" placeholder="Enter Maze here..." value = ""></textarea><br>
+  </div>
+
+  <div>
+    <input type = "button" value = "Show Maze" id = "showEvent" />
     <input type = "button" value = "Solve" id = "submitEvent" />
-    <br>
-  </form>
+  </div>
   <br>
 
-  <div id= "mazeImg"></div>
+  <div id= "inputMazeImg">
+  </div>
+
+  <br>
+
+  <div>
+    Solution:
+    <br>
+    <textarea rows = "5" cols = "60" id = "solvedMaze" readonly></textarea>
+    <br>
+    <br>
+  </div>
+
+  <br>
+
+  <div id= "solvedMazeImg">
+  </div>
 
   <br>
 

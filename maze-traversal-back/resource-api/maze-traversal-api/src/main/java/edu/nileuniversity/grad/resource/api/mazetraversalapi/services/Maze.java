@@ -55,8 +55,9 @@ public class Maze {
                 } else if (lines[row].charAt(col) == 'E') {
                     maze[row][col] = EXIT;
                     end = new Coordinate(row, col);
-                } else
+                } else if (lines[row].charAt(col) == '-') {
                     maze[row][col] = ROAD;
+                }
             }
         }
 
@@ -124,7 +125,7 @@ public class Maze {
         for (int row = 0; row < getHeight(); row++) {
             for (int col = 0; col < getWidth(); col++) {
                 if (maze[row][col] == ROAD) {
-                    result.append(' ');
+                    result.append('-');
                 } else if (maze[row][col] == WALL) {
                     result.append('#');
                 } else if (maze[row][col] == START) {

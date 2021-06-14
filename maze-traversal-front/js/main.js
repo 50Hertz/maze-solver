@@ -18,13 +18,22 @@ let _apiResponse = {
 }
 
 
-var submitEventBtn = document.getElementById("submitEvent");
+const submitEventBtn = document.getElementById("submitEvent");
+const showEventBtn = document.getElementById("showEvent");
 
 submitEventBtn.addEventListener("click", solveMaze);
+showEventBtn.addEventListener("click", showMaze);
+
+function showMaze() {
+  inputMaze = document.getElementById("inputMaze").value;
+  if (!inputMaze) {
+    displayAlert("Please input maze.");
+  }
+  generateMazeImage(inputMaze, "inputMazeImg");
+}
 
 function solveMaze() {
   inputMaze = document.getElementById("inputMaze").value;
-  //inputMaze = inputMaze.replaceAll("|", "\\n").split("").join("");
   console.log(inputMaze);
   _apiBody.initialMaze = inputMaze;
 
@@ -33,14 +42,28 @@ function solveMaze() {
     headers: {'content-type': 'application/json'},
     body: JSON.stringify(_apiBody)
   })
-    .catch(err => console.log('Request Failed', err))
+    .catch(err => displayAlert(err))
     .then(response => response.json())
     .then(json => {
       console.log(json);
       restResponsePojo = json;
+
+      if (!restResponsePojo) {
+        displayAlert("Unable to process request. Contact system administrator.");
+      }
+
+      if (!restResponsePojo.success) {
+        displayAlert(restResponsePojo.message);
+      }
+
       _apiResponse = restResponsePojo.data;
+
+      if (!_apiResponse) {
+        displayAlert("Unable to process request. Contact system administrator.");
+      }
       console.log(_apiResponse.solvedMaze);
-      generateMazeImage(_apiResponse.solvedMaze, "mazeImg")
+      document.getElementById("solvedMaze").value = _apiResponse.solvedMaze;
+      generateMazeImage(_apiResponse.solvedMaze, "solvedMazeImg");
     });
 
 }
@@ -72,4 +95,8 @@ function generateMazeImage (map, divElementId) {
     });
     document.getElementById(divElementId).appendChild(document.createElement("br"))
   });
+}
+
+function displayAlert(message) {
+  alert(message);
 }
