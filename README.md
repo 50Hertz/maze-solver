@@ -82,8 +82,12 @@ And, the method continues to execute recursively until an exit node is found or 
   ```
 
 ## Sample
-If you want to embed images, this is how you do it:
-![Input Maze](images/input_maze.png)
+
+### Input Maze
+![Input Maze](images/input_maze.png "Fig 1. Input Maze")
+
+### Solved Maze
+![Solved Maze](images/solved_maze.png "Fig 2. Solved Maze")
 
 ## Contact
 Seyi S. Adedara - adedaraseyi@gmail.com
