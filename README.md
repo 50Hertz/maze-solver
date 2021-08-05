@@ -1,5 +1,4 @@
 # Maze Traversal
-**Question:** (TRAVERSING A MAZE) Consider a n x n maze with one entry point and one exit and all free and blocked cells clearly identifieded. Which search algorithm do you think is suitable for traversing the maze? Provide a web-based implementation of the algorithm and test it. You may use Java or C++ to implement the algorithm. Ensure that your implementation includes a graphical display of the maze. All relevant data structures used must be clearly defined.
 
 ## Prerequisites
 
